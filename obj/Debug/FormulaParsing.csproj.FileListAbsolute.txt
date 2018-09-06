@@ -1,0 +1,16 @@
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\bin\Debug\FormulaParsing.exe.config
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\bin\Debug\FormulaParsing.exe
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\bin\Debug\FormulaParsing.pdb
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\View\MainWindow.g.cs
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\App.g.cs
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing_MarkupCompile.cache
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\View\MainWindow.baml
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.g.resources
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.Properties.Resources.resources
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.csproj.GenerateResource.cache
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.csproj.CoreCompileInputs.cache
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.exe
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.pdb
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing_MarkupCompile.lref
+C:\Users\Max\Source\Repos\FormulaParsing\FormulaParsing\obj\Debug\FormulaParsing.csprojAssemblyReference.cache

@@ -1,0 +1,105 @@
+﻿<Window x:Class="FormulaParsing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Stacker.ViewModels"
+        mc:Ignorable="d"
+        Title="Разбор строки" Height="800" Width="600" ResizeMode="CanMinimize">
+    
+    <Window.DataContext>
+        <vm:ViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <!--Color Set-->
+        <SolidColorBrush x:Key="Color1" Color="#2179e3"/>
+        <SolidColorBrush x:Key="Color2" Color="#218CE3"/>
+        <SolidColorBrush x:Key="Color3" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="Color4" Color="#010101"/>
+        
+        <!--Text Block Style-->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource Color1}"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Vani"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+        </Style>
+        
+        <!--Text Box Style-->
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="{DynamicResource Color3}"/>
+            <Setter Property="Background" Value="{DynamicResource Color2}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Color2}"/>
+            <Setter Property="SelectionBrush" Value="{DynamicResource Color3}"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Vani"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <!--Regular Button Style-->
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource Color2}"/>
+            <Setter Property="Background" Value="{DynamicResource Color3}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Color2}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" CornerRadius="5" BorderThickness="3" 
+                                Background="{DynamicResource Color3}" BorderBrush="{DynamicResource Color2}">
+                            <ContentPresenter Margin="2" HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="ButtonBorder" Property="Background" 
+                                        Value="{DynamicResource Color3}" />
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" 
+                                        Value="{DynamicResource Color2}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="ButtonBorder" Property="Background" 
+                                        Value="{DynamicResource Color2}" />
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" 
+                                        Value="{DynamicResource Color1}" />
+                                <Setter Property="Foreground" Value="{DynamicResource Color1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    
+    <Grid Background="{DynamicResource Color3}" Margin="0 0 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock  Grid.Row="0" Text="Выражение" />
+        <TextBox    Grid.Row="1" Margin="10 10 10 10"  Text="{Binding Expression}" 
+                    TabIndex="1" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    ToolTip="Допустимы числа, операции +,-,*,/ и ^ и переменная x"/>
+
+
+        <TextBlock  Grid.Row="2" Text="Переменная"/>
+        <TextBox    Grid.Row="3" Margin="10 10 10 10" Text="{Binding ValueOfVariable}" TabIndex="2" />
+
+        <TextBlock  Grid.Row="4" Text="Результат" />
+        <TextBlock  Grid.Row="5" FontSize="50" Text="{Binding Result, Mode=OneWay}"/>
+        
+        <Button Grid.Row="6" Height="66" Padding="10 10 10 10"  Margin="20 10 20 10" 
+                Content="Расчитать" TabIndex="3" />
+    </Grid>
+</Window>
