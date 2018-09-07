@@ -1,8 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FormulaParsing.Model
 {
@@ -66,8 +64,16 @@ namespace FormulaParsing.Model
                         break;
                     case 'x': // имя переменной
                         //если переменная сразу после числа - ошибка!
-                        if (num != "") throw new ArgumentException("Пропущен оператор между числом и переменной!");
-                        list.Add(c.ToString());
+                        //if (num != "") throw new ArgumentException("Пропущен оператор между числом и переменной!");
+                        //если переменная идет сразу за числом - добавляем число и умножение.
+                        if (num != "") 
+                        {
+                            list.Add(num);
+                            num = "";
+                            list.Add("*");
+                        }
+                        if (list.Last() == ")") list.Add("*");
+                            list.Add(c.ToString());
                         break;
                     default: throw new ArgumentException("Недопустимые символы!");
                 }
